@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] array = { 64, 34, 25, 12, 22, 11, 90 };
+        SXNoiBot(array, array.Length);
+        Console.WriteLine("Mang da sap xep:");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write(array[i] + " ");
+        }
+    }
+
+    static void SXNoiBot(int[] a, int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n - i - 1; j++)
+            {
+                if (a[j] > a[j + 1])
+                {
+                    Swap(ref a[j], ref a[j + 1]);
+                }
+            }
+        }
+    }
+
+    static void Swap(ref int a, ref int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+}
